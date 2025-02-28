@@ -5,7 +5,7 @@
 <a href="https://lucasdegeorge.github.io/" >Lucas Degeorge</a>, <a href="https://arijit-hub.github.io/" >Arijit Ghosh</a>, <a href="https://nicolas-dufour.github.io/" >Nicolas Dufour</a>, <a href="https://vicky.kalogeiton.info/" >Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/" >David Picard</a>
 </div>
 
-![DED](/assets/teqser.png)
+![DED](/assets/teaser.png)
 
 This repo has the code for the paper "How far can we go with ImageNet for Text-to-Image generation?"
 
