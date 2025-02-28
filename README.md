@@ -23,7 +23,7 @@ To install, first create a virtual environment with python (at least 3.9) and ru
 pip install -e .
 ```
 
-If you want to use the training pipeline (see `training/README.md`):
+If you want to use the training pipeline (see [`training/README.md`](https://github.com/lucasdegeorge/T2I-ImageNet/blob/main/t2i_imagenet/training/README.md)):
 
 ```bash
 pip install .[train]
@@ -34,11 +34,11 @@ Depending of your CUDA version be careful installing torch.
 
 ## Text and Pixel augmentation recipe
 
-See `data_augmentations/README.md`
+See [`data_augmentations/README.md`](https://github.com/lucasdegeorge/T2I-ImageNet/blob/main/t2i_imagenet/data_augmentations/README.md)
 
 ## Training
 
-See `training/README.md`
+See [`training/README.md`](https://github.com/lucasdegeorge/T2I-ImageNet/blob/main/t2i_imagenet/training/README.md)
 
 ## Citation
 If you happen to use this repo in your experiments, you can acknowledge us by citing the following paper:
