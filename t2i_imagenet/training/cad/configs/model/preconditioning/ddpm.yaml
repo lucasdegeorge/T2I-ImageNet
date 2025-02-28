@@ -1,0 +1,3 @@
+_target_: models.preconditioning.DDPMPrecond
+num_latents: ${model.network.num_latents}
+latents_dim: ${model.network.latents_dim}

@@ -1,0 +1,14 @@
+# @package _global_
+
+model:
+  cond_preprocessing:
+    drop_labels: True
+  network:
+    use_cond_token: False
+  loss:
+    cond_drop_rate: 0.0
+
+checkpoints:
+  validate_conditional: False
+  validate_per_class_metrics: False
+  validate_unconditional: True

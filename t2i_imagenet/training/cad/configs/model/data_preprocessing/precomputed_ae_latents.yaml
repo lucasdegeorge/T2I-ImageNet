@@ -1,0 +1,6 @@
+_target_: models.preprocessing.PrecomputedAELatentPreconditioning
+input_key_mean: ${model.vae_embedding_name_mean}
+input_key_std: null
+output_key_root: x_0
+vae_sample: False
+channel_wise_normalisation: True

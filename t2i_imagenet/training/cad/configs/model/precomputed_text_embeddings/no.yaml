@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - override /model/cond_preprocessing: text
+  - override /model/uncond_conditioning: empty_string
+
+model:
+  text_embedding_name: null
+  return_text: true

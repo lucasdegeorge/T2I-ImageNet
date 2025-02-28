@@ -1,0 +1,4 @@
+_partial_: true
+_target_: models.samplers.dpm.dpm_sampler
+num_steps: 150
+cfg_rate: ${model.cfg_rate}

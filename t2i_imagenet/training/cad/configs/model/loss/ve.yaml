@@ -1,0 +1,4 @@
+_target_: models.losses.VELoss
+sigma_min: 0.02
+sigma_max: 100
+loss_type: l2

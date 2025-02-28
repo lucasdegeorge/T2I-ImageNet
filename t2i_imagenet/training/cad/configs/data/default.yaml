@@ -1,0 +1,19 @@
+defaults:
+  - train_aug: none
+  - val_aug: none
+  - dataset: cifar10
+  - collate_fn: from_tuple
+  - _self_
+
+train_dataset: ${data.train_instance}
+val_dataset: ${data.val_instance}
+
+datamodule:
+  _target_: data.datamodule.ImageDataModule
+  train_dataset: ${data.train_dataset}
+  val_dataset: ${data.val_dataset}
+  full_batch_size: ${data.full_batch_size}
+  collate_fn: ${data.collate_fn}
+  num_workers: ${computer.num_workers}
+  num_nodes: ${computer.num_nodes}
+  num_devices: ${computer.devices}

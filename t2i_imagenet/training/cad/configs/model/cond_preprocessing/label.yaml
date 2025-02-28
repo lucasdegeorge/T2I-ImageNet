@@ -1,0 +1,4 @@
+_target_: models.preprocessing.PrecomputedPreconditioning
+input_key: label
+output_key_root: label
+drop_labels: False

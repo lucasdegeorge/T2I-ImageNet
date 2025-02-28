@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - override /model/data_preprocessing: precomputed_ae_latents
+  - override /model/postprocessing: ae_sana
+
+model:
+  network:
+    num_input_channels: 32
+  vae_embedding_name_mean: vae_embeddings_${data.img_resolution}
+  return_image: false
+  channel_wise_normalisation: True

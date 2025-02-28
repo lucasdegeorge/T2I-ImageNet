@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - override /model/data_preprocessing: precomputed_sd_latents
+  - override /model/postprocessing: sd_1_5_vae
+
+model:
+  network:
+    num_input_channels: 4
+  vae_embedding_name_mean: vae_embeddings_${data.img_resolution}
+  return_image: false

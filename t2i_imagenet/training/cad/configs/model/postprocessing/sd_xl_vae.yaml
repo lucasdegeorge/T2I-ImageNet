@@ -1,0 +1,5 @@
+_target_: t2i_imagenet.training.cad.models.postprocessing.SD1_5VAEDecoderPostProcessing
+vae:
+  _target_: diffusers.AutoencoderKL.from_pretrained
+  pretrained_model_name_or_path: "stabilityai/sdxl-vae"
+channel_wise_normalisation: ${model.channel_wise_normalisation}

@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - override /model/cond_preprocessing: precomputed_text_emb
+  - override /model/uncond_conditioning: t5_uncond
+
+model:
+  text_embedding_name: flan_t5_xl
+  return_text: false

@@ -1,0 +1,7 @@
+_partial_: true
+_target_: models.preconditioning.VPPrecond
+label_dim: ${data.label_dim}
+beta_d: 19.9
+beta_min: 0.1
+M: 1000
+epsilon_t: 1e-5

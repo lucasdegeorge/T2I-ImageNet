@@ -1,0 +1,9 @@
+devices: 8
+num_workers: 8
+progress_bar_refresh_rate: 2
+sync_batchnorm: True
+accelerator: gpu
+precision: bf16-mixed
+strategy: ddp
+num_nodes: 1
+eval_gpu_type: a100

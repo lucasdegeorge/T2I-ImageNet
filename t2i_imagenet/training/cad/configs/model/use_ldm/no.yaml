@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - override /model/data_preprocessing: pixels
+
+model:
+  vae_embedding_name_mean: null
+  return_image: true

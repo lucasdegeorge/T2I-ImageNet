@@ -1,0 +1,70 @@
+
+
+defaults:
+  - model: text_cond
+  - computer: v100
+  - data: default
+  - _self_
+  - use_condition: conditional
+  - stage: null
+  - overrides: ???
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  max_steps: 150000
+  val_check_interval: 5000
+  check_val_every_n_epoch: null
+  devices: ${computer.devices}
+  accelerator: ${computer.accelerator}
+  strategy: ${computer.strategy}
+  log_every_n_steps: 1
+  num_nodes: ${computer.num_nodes}
+  precision: ${computer.precision}
+
+logger:
+  _target_: pytorch_lightning.loggers.WandbLogger
+  save_dir: ${root_dir}/t2i_imagenet/training/cad/wandb
+  name: ${experiment_name}
+  project: Captioner Diffusion
+  log_model: False
+  offline: True
+
+checkpoints:
+  _target_: callbacks.checkpoint_and_validate.ModelCheckpointValidate
+  gpu_type: ${computer.eval_gpu_type}
+  validate_when_not_on_cluster: False
+  validate_when_on_cluster: False
+  eval_set: train
+  validate_conditional: True
+  validate_unconditional: False
+  validate_per_class_metrics: True
+  shape:
+    - ${model.network.num_input_channels}
+    - ${data.data_resolution}
+    - ${data.data_resolution}
+  num_classes: ${data.label_dim}
+  dataset_name: ${data.name}
+  dirpath: ${root_dir}/t2i_imagenet/training/cad/checkpoints/${experiment_name}
+  filename: 'step_{step}'
+  monitor: val/loss_ema
+  save_last: True
+  save_top_k: -1
+  enable_version_counter: False
+  every_n_train_steps: 10000
+  auto_insert_metric_name: False
+
+progress_bar:
+  _target_: pytorch_lightning.callbacks.TQDMProgressBar
+  refresh_rate: ${computer.progress_bar_refresh_rate}
+
+data_dir: ${root_dir}/t2i_imagenet/training/t2i_imagenet/training/cad/datasets
+root_dir:  ${hydra:runtime.cwd}
+sana_size: null
+experiment_name_suffix: base
+experiment_name: ${data.name}_${model.name}_${experiment_name_suffix}
+
+hydra:
+  run:
+    dir: outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}/${experiment_name}
+  job:
+    chdir: true

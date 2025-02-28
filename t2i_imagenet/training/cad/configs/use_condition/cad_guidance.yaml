@@ -1,0 +1,10 @@
+# @package _global_
+
+model:
+  cond_preprocessing:
+    drop_labels: False
+  network:
+    use_cond_token: true
+  loss:
+    cond_drop_rate: 0.0
+  cfg_rate: 7.0

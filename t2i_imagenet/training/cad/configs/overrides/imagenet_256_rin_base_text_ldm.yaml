@@ -1,0 +1,58 @@
+# @package _global_
+
+defaults:
+  - override /model: text_cond
+  - override /data: webdataset
+  - override /data/dataset: imagenet_256_ldm_text
+  - override /data/train_aug: center_crop
+  - override /data/val_aug: center_crop
+  - override /model/train_noise_scheduler: linear
+  - override /model/use_ldm: precomputed_resample
+  - override /model/precomputed_text_embeddings: 'yes'
+  - _self_
+  - override /use_condition: classifier_free_guidance
+data:
+  name: ImageNet_256_Text_LDM
+  img_resolution: 256
+  data_resolution: 32
+  full_batch_size: 1024
+
+model:
+  cfg_rate: 8.0
+  network:
+    data_dim: 256
+    num_latents: 128
+    latents_dim: 768
+    num_processing_layers: 4
+    num_blocks: 4
+    path_size: 2
+    read_write_heads: 16
+    compute_heads: 12
+    data_mlp_multiplier: 4
+    compute_dropout: 0
+    rw_stochastic_depth: 0
+    compute_stochastic_depth: 0
+
+  ema_decay: 0.9999
+  start_ema_step: 0
+  optimizer:
+    optim:
+      lr: 1e-3
+      weight_decay: 0.01
+    exclude_ln_and_biases_from_weight_decay: True
+  lr_scheduler:
+    warmup_steps: 5000
+    rate: 0.7
+  loss:
+    cond_drop_rate: 0.1
+  return_image: true
+  return_text: true
+
+trainer:
+  max_steps: 100000
+  gradient_clip_val: 2.0
+
+checkpoints:
+  eval_set: val
+  every_n_train_steps: 25000
+  validate_per_class_metrics: False

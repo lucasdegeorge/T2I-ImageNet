@@ -1,0 +1,10 @@
+_target_: models.preprocessing.TextPreprocessing
+tokenizer:
+  _target_: transformers.AutoTokenizer.from_pretrained
+  pretrained_model_name_or_path: google/flan-t5-xl
+model:
+  _target_: transformers.T5EncoderModel.from_pretrained
+  pretrained_model_name_or_path: google/flan-t5-xl
+drop_labels: False
+input_key: text
+output_key_root: text_tokens

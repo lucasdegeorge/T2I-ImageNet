@@ -1,0 +1,5 @@
+_target_: models.losses.VPLoss
+beta_d: 19.9
+beta_min: 0.1
+epsilon_t: 1e-5
+loss_type: l2

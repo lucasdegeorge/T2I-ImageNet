@@ -1,0 +1,40 @@
+# @package _global_
+
+data:
+  name: ImageNet_LDM
+  type: text_conditional
+  img_resolution: 256
+  data_resolution: 32
+  label_dim: 2048
+  num_cond_tokens: 77
+  full_batch_size: 4
+  in_channels: 4
+  out_channels: 4
+
+  train_instance:
+    _partial_: true
+    _target_: data.text_dataset.TextWebDataset
+    root: ${data_dir}/train
+    image_transforms: ${data.train_aug}
+    train: true
+    text_embedding_name: ${model.text_embedding_name}
+    vae_embedding_name_mean: ${model.vae_embedding_name_mean}
+    vae_embedding_name_std: ${model.vae_embedding_name_std}
+    return_image: ${model.return_image}
+    return_text: ${model.return_text}
+    min_image_size: ${data.img_resolution}
+
+  val_instance:
+    _partial_: true
+    _target_: data.text_dataset.TextDataset
+    root:  ${data_dir}/val
+    image_transforms: ${data.val_aug}
+    text_embedding_name: ${model.text_embedding_name}
+    vae_embedding_name_mean: ${model.vae_embedding_name_mean}
+    vae_embedding_name_std: ${model.vae_embedding_name_std}
+    return_image: ${model.return_image}
+    return_text: ${model.return_text}
+
+  target_transform:
+    _target_: utils.one_hot_transform.OneHotTransform
+    num_classes: ${data.label_dim}

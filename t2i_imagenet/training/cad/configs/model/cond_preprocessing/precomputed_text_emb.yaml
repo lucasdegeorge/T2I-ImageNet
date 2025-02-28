@@ -1,0 +1,4 @@
+_target_: models.preprocessing.PrecomputedTextConditioning
+input_key:  flan_t5_xl
+output_key_root: text_tokens
+drop_labels: False

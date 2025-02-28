@@ -1,0 +1,5 @@
+_target_: models.postprocessing.AEDecoderPostProcessing
+ae:
+  _target_: diffusers.AutoencoderDC.from_pretrained
+  pretrained_model_name_or_path: "mit-han-lab/dc-ae-f32c32-sana-1.0-diffusers"
+channel_wise_normalisation: ${model.channel_wise_normalisation}

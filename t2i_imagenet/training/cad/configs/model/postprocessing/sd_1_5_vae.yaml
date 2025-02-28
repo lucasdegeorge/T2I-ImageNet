@@ -1,0 +1,7 @@
+_target_: models.postprocessing.SD1_5VAEDecoderPostProcessing
+vae:
+  _target_: diffusers.AutoencoderKL.from_pretrained
+  pretrained_model_name_or_path: "benjamin-paine/stable-diffusion-v1-5"
+  local_files_only: True
+  subfolder: "vae"
+channel_wise_normalisation: ${model.channel_wise_normalisation}

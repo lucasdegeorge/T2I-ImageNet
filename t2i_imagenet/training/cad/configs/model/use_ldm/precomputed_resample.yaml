@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - override /model/data_preprocessing: precomputed_sd_latents_resample
+  - override /model/postprocessing: sd_1_5_vae
+
+model:
+  network:
+    num_input_channels: 4
+  vae_embedding_name_mean: vae_embeddings_mean_${data.img_resolution}
+  vae_embedding_name_std: vae_embeddings_std_${data.img_resolution}
+  return_image: false
+  channel_wise_normalisation: True

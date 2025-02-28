@@ -1,0 +1,4 @@
+_target_: data.datamodule.dict_collate_and_pad
+keys_to_pad:
+  - flan_t5_xl
+max_length: 256

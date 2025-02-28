@@ -1,0 +1,3 @@
+_target_: models.preprocessing.PrecomputedPreconditioning
+input_key: image
+output_key_root: x_0

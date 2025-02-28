@@ -1,0 +1,7 @@
+_partial_: true
+_target_: models.losses.DDPMLoss
+self_cond_rate: 0.9
+cond_drop_rate: 0.0
+conditioning_key: ${model.cond_preprocessing.output_key_root}
+resample_by_coherence: false
+sample_random_when_drop: false

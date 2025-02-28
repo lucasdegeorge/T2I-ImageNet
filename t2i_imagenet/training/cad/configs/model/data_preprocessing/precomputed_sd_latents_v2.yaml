@@ -1,0 +1,6 @@
+_target_: models.preprocessing.PrecomputedSDLatentPreconditioning
+input_key_mean: ${model.vae_embedding_name_mean}
+input_key_std: ${model.vae_embedding_name_std}
+output_key_root: x_0
+vae_sample: False
+channel_wise_normalisation: ${model.channel_wise_normalisation}

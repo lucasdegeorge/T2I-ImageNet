@@ -1,0 +1,5 @@
+_partial_: true
+_target_: models.preconditioning.VEPrecond
+label_dim: ${data.label_dim}
+sigma_min: 0.02
+sigma_max: 100

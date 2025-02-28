@@ -1,0 +1,2 @@
+_target_: numpy.load
+file: ${root_dir}/t2i_imagenet/training/cad/utils/flan_t5_xl_uncond.npy

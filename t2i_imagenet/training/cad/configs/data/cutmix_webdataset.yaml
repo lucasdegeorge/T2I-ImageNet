@@ -1,0 +1,21 @@
+defaults:
+  - train_aug: none
+  - val_aug: none
+  - dataset: imagenet_256_ldm_text_cutmix
+  - collate_fn: from_dict_pad
+  - _self_
+
+train_dataset: ${data.train_instance}
+cutmix_dataset: ${data.cutmix_instance}
+val_dataset: ${data.val_instance}
+
+datamodule:
+  _target_: data.cutmix_datamodule.WebdatasetCutMixDataModule
+  train_dataset: ${data.train_dataset}
+  cutmix_dataset: ${data.cutmix_instance}
+  val_dataset: ${data.val_dataset}
+  full_batch_size: ${data.full_batch_size}
+  num_workers: ${computer.num_workers}
+  collate_fn: ${data.collate_fn}
+  num_nodes: ${computer.num_nodes}
+  num_devices: ${computer.devices}
