@@ -11,8 +11,9 @@ This repo has the code for the paper "How far can we go with ImageNet for Text-t
 
 The core idea is that text-to-image generation models typically rely on vast datasets, prioritizing quantity over quality. The usual solution is to gather massive amounts of data. We propose a new approach that leverages strategic data augmentation of small, well-curated datasets to enhance the performance of these models. We show that this method improves the quality of the generated images on several benchmarks.
 
-Paper on Arxiv: coming soon
-Project website: coming soon
+Paper on Arxiv: https://arxiv.org/pdf/2502.21318
+
+Project website: https://lucasdegeorge.github.io/projects/t2i_imagenet/
 
 
 ## Install 
@@ -29,10 +30,10 @@ If you want to use the training pipeline (see [`training/README.md`](https://git
 pip install .[train]
 ```
 
-Depending of your CUDA version be careful installing torch.
+Depending on your CUDA version, be careful installing torch.
 
 
-## Text and Pixel augmentation recipe
+## Text and Pixel Augmentation recipe
 
 See [`data_augmentations/README.md`](https://github.com/lucasdegeorge/T2I-ImageNet/blob/main/t2i_imagenet/data_augmentations/README.md)
 
@@ -44,6 +45,11 @@ See [`training/README.md`](https://github.com/lucasdegeorge/T2I-ImageNet/blob/ma
 If you happen to use this repo in your experiments, you can acknowledge us by citing the following paper:
 
 ```bibtex
-
+@article{degeorge2025farimagenettexttoimagegeneration, 
+     title           ={How far can we go with ImageNet for Text-to-Image generation?}, 
+     author          ={Lucas Degeorges and Arijit Ghosh and Nicolas Dufour and David Picard and Vicky Kalogeiton}, 
+     year            ={2025}, 
+     journal         ={arXiv},
+ }
 ```
 
