@@ -1,4 +1,4 @@
-## Text and Pixel augmentation recipe
+## Text and Pixel augmentation based dataset creation
 
 ### Pixel augmented image creation
 
@@ -17,7 +17,7 @@ To generate the image augmented datasets, please ensure that you have your datas
     |_...
 ```
 
-The extension `.JPEG` can be any other image extension which can be loaded using `PIL`.
+The image extensions allowed are `.JPEG`, `.jpg`, `.png`.
 
 To create pixel augmented images using your own data use the following command:
 
@@ -30,7 +30,7 @@ python pixel_augmentation.py --base_image_size=256 \
     --img_extension="JPEG"
 ```
 
-This will create `256x256` pixel augmented images based on CM$^{all}$ setting of same size as your original dataset and save it to `/path/to/out/dir`. Do change the arguments in accordance to your dataset and your preferred settings.
+This will create `256x256` pixel augmented images based on CM<sup>all</sup> setting of same size as your original dataset and save it to `/path/to/out/dir`. Do change the arguments in accordance to your dataset and your preferred settings.
 
 
 ### Text augmentation 
@@ -60,7 +60,7 @@ To create a [Webdataset](https://github.com/webdataset/webdataset) with a text a
     |captions.tsv
 ```
 
-Run the following command to create your Webdataset. It will create tar files containing precomputed [latent](https://huggingface.co/stabilityai/sd-vae-ft-ema) embeddings of the images, precomputed [Flan-T5 XXL](https://huggingface.co/google/flan-t5-xxl) embeddgings of the captions. 
+Run the following command to create your Webdataset. It will create `.tar` files containing precomputed [latent](https://huggingface.co/stabilityai/sd-vae-ft-ema) embeddings of the images, precomputed [Flan-T5 XXL](https://huggingface.co/google/flan-t5-xxl) embeddings of the captions along with the raw images and the text captions. 
 
 
 ```bash
