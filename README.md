@@ -45,9 +45,9 @@ image = pipe(prompt, cfg=15)
 
 Models are hosted in the HuggingFace Hub. Weights can be found at:
 
-Model trained with both **Text and Image Augmentation**: https://huggingface.co/Lucasdegeorge/CAD-I
+- **CAD-I**: model trained with both **Text and Image Augmentation**: https://huggingface.co/Lucasdegeorge/CAD-I
 
-Model trained with **Text Augmentation only**: https://huggingface.co/Lucasdegeorge/CAD-I_TA
+- **CAD-I_TA**: model trained with **Text Augmentation only**: https://huggingface.co/Lucasdegeorge/CAD-I_TA
 
 More details about the `T2IPipeline` are given in the [model card on HuggingFace](https://huggingface.co/Lucasdegeorge/CAD-I)
 
