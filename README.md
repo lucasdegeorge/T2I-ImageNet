@@ -79,7 +79,7 @@ If you happen to use this repo in your experiments, you can acknowledge us by ci
 ```bibtex
 @article{degeorge2025farimagenettexttoimagegeneration, 
      title           ={How far can we go with ImageNet for Text-to-Image generation?}, 
-     author          ={Lucas Degeorges and Arijit Ghosh and Nicolas Dufour and David Picard and Vicky Kalogeiton}, 
+     author          ={Lucas Degeorge and Arijit Ghosh and Nicolas Dufour and David Picard and Vicky Kalogeiton}, 
      year            ={2025}, 
      journal         ={arXiv},
  }
