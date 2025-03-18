@@ -85,9 +85,17 @@ def create_tar_files(
 def read_captions(caption_file):
     print(f'Reading captions from {caption_file}')
     captions = {}
-    if caption_file.endswith('.csv'):
+    if caption_file.endswith('.csv'):   
         with open(caption_file, 'r') as f:
             reader = csv.reader(f)
+            for row in reader:
+                if len(row) >= 2:
+                    key, caption = row[0], row[1]
+                    captions[key] = caption
+        return captions
+    elif caption_file.endswith('.tsv'):
+        with open(caption_file, 'r') as f:
+            reader = csv.reader(f, delimiter='\t')
             for row in reader:
                 if len(row) >= 2:
                     key, caption = row[0], row[1]

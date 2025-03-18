@@ -44,7 +44,6 @@ Run the following command to caption your images. It will create `.tsv` file con
 python text_augmentation.py --image_dir="/path/to/input/root/images" \
     --batch_size=64 \
     --res_file="/path/to/input/root/images/captions.tsv" \
-    --out_dir="/path/to/out/dir"
 ```
 
 

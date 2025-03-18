@@ -73,7 +73,7 @@ class LlavaCaptioner:
                 with open(f"{res_file}", "a") as f:
                     for j in range(len(image_path)):
                         f.write(
-                            f"{image_path[j]}\t{self.postprocess_caption(captions[j])}\n"
+                            f"{str(image_path[j]).split('/')[-1]}\t{self.postprocess_caption(captions[j])}\n"
                         )
             else:
                 all_captions.append((image_path, captions))
@@ -83,7 +83,7 @@ class LlavaCaptioner:
                 for image_path, captions in all_captions:
                     for j in range(len(image_path)):
                         f.write(
-                            f"{image_path[j]}\t{self.postprocess_caption(captions[j])}\n"
+                            f"{str(image_path[j]).split('/')[-1]}\t{self.postprocess_caption(captions[j])}\n"
                         )
 
     def postprocess_caption(self, caption: str):
@@ -131,11 +131,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     dataset = CaptioningDataset(
-       args.image_dir, batch_size=args.batch_size,
+       args.image_dir, batch_size=int(args.batch_size),
     )
     captioner = LlavaCaptioner(
         dataset=dataset,
         prompt=args.prompt,
         max_new_tokens=args.max_new_tokens,
     )
-    caption = captioner.caption(save_on_the_go=False)
+    caption = captioner.caption(res_file=args.res_file, save_on_the_go=False)
