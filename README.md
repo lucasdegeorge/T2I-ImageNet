@@ -9,7 +9,7 @@
 
 This repo has the code for the paper "How far can we go with ImageNet for Text-to-Image generation?"
 
-The core idea is that text-to-image generation models typically rely on vast datasets, prioritizing quantity over quality. The usual solution is to gather massive amounts of data. We propose a new approach that leverages strategic data augmentation of small, well-curated datasets to enhance the performance of these models. We show that this method improves the quality of the generated images on several benchmarks.
+The core idea is that text-to-image generation models traditionally rely on the assumption that larger datasets lead to better performance. We challenge this 'bigger is better' paradigm by demonstrating that training solely on the well-established ImageNet dataset can achieve surprisingly competitive results. Our approach not only matches but often surpasses the performance of models trained on much larger datasets, all while using significantly less computational resources. This paves the way for more reproducible and accessible research."
 
 Paper on Arxiv: https://arxiv.org/pdf/2502.21318
 
