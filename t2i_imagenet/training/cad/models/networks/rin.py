@@ -5,7 +5,7 @@ import torch.nn as nn
 from einops import rearrange
 from torch import Tensor
 
-from models.positional_embeddings import FourierEmbedding, PositionalEmbedding
+from t2i_imagenet.training.cad.models.positional_embeddings import FourierEmbedding, PositionalEmbedding
 
 torch.fx.wrap("rearrange")
 from typing import Optional, Tuple
@@ -14,7 +14,7 @@ from einops._torch_specific import allow_ops_in_compiled_graph  # requires einop
 
 allow_ops_in_compiled_graph()
 
-from models.networks.transformers import (
+from t2i_imagenet.training.cad.models.networks.transformers import (
     CrossAttentionBlock,
     FusedMLP,
     LayerNorm16Bits,

@@ -10,7 +10,7 @@ import hydra
 from einops import rearrange
 import json
 
-from models.diffusion import DiffusionModule
+from t2i_imagenet.training.cad.models.diffusion import DiffusionModule
 
 def seed_everything(seed):
     torch.manual_seed(seed)

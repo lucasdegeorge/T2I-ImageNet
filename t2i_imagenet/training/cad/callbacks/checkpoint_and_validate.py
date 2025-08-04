@@ -5,7 +5,7 @@ from typing import Any, Dict
 from lightning_fabric.utilities.rank_zero import rank_zero_only
 from pytorch_lightning.callbacks import ModelCheckpoint
 
-from metrics.sample_and_eval import SampleAndEval
+from t2i_imagenet.training.cad.metrics.sample_and_eval import SampleAndEval
 
 
 class ModelCheckpointValidate(ModelCheckpoint):

@@ -37,7 +37,7 @@ Depending on your CUDA version, be careful installing torch.
 
 To use the pre-trained models, do the following:
 ```python
-from pipe import T2IPipeline
+from t2i_imagenet import T2IPipeline
 pipe = T2IPipeline("Lucasdegeorge/CAD-I").to("cuda")
 prompt = "An adorable otter, with its sleek, brown fur and bright, curious eyes, playfully interacts with a vibrant bunch of broccoli... "
 image = pipe(prompt, cfg=15)

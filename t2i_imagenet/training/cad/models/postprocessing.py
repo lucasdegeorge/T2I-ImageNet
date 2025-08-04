@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from utils.image_processing import remap_image_torch
+from t2i_imagenet.training.cad.utils.image_processing import remap_image_torch
 
 
 class SD1_5VAEPostProcessing(nn.Module):

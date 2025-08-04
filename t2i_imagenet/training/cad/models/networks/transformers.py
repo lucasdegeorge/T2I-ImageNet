@@ -5,7 +5,7 @@ import torch.nn as nn
 from einops import rearrange
 from torch import Tensor
 
-from models.positional_embeddings import FourierEmbedding, PositionalEmbedding
+from t2i_imagenet.training.cad.models.positional_embeddings import FourierEmbedding, PositionalEmbedding
 
 torch.fx.wrap("rearrange")
 from typing import Optional, Tuple

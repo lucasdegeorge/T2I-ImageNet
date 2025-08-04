@@ -12,10 +12,10 @@ import webdataset as wds
 from torchmetrics.multimodal.clip_score import CLIPScore
 from tqdm import tqdm
 from pathlib import Path
-from utils.image_processing import remap_image_torch
+from t2i_imagenet.training.cad.utils.image_processing import remap_image_torch
 
-from .classifier_acc import ClassifierAccuracy
-from .inception_metrics import MultiInceptionMetrics, NoTrainInceptionV3
+from t2i_imagenet.training.cad.metrics.classifier_acc import ClassifierAccuracy
+from t2i_imagenet.training.cad.metrics.inception_metrics import MultiInceptionMetrics, NoTrainInceptionV3
 
 
 class SampleAndEval:

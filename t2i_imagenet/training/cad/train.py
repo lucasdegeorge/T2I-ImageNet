@@ -10,8 +10,8 @@ from omegaconf import OmegaConf
 from pytorch_lightning.callbacks import LearningRateMonitor
 
 import wandb
-from callbacks import EMACallback, FixNANinGrad, IncreaseDataEpoch, LogGeneratedImages
-from models.diffusion import DiffusionModule
+from t2i_imagenet.training.cad.callbacks import EMACallback, FixNANinGrad, IncreaseDataEpoch, LogGeneratedImages
+from t2i_imagenet.training.cad.models.diffusion import DiffusionModule
 
 torch.set_float32_matmul_precision("high")
 

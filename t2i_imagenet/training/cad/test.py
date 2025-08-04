@@ -7,8 +7,8 @@ from lightning_fabric.utilities.rank_zero import _get_rank
 from omegaconf import OmegaConf
 
 import wandb
-from metrics.sample_and_eval import SampleAndEval
-from models.diffusion import DiffusionModule
+from t2i_imagenet.training.cad.metrics.sample_and_eval import SampleAndEval
+from t2i_imagenet.training.cad.models.diffusion import DiffusionModule
 
 torch.set_float32_matmul_precision("high")
 

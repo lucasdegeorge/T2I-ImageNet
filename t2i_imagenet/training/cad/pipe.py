@@ -4,8 +4,8 @@ import string
 from diffusers import AutoencoderKL
 from transformers import AutoTokenizer, T5EncoderModel
 from huggingface_hub import PyTorchModelHubMixin
-from models.networks.rin import CADRINTextCond
-from models.samplers import (
+from t2i_imagenet.training.cad.models.networks.rin import CADRINTextCond
+from t2i_imagenet.training.cad.models.samplers import (
     ddim_sampler,
     ddpm_sampler,
     dpm_sampler,
@@ -13,17 +13,17 @@ from models.samplers import (
     dpm_plusplus_2M_sampler,
 )
 
-from models.postprocessing import (
+from t2i_imagenet.training.cad.models.postprocessing import (
     SD1_5VAEDecoderPostProcessing,
 )
 
-from models.schedulers import (
+from t2i_imagenet.training.cad.models.schedulers import (
     SigmoidScheduler,
     LinearScheduler,
     CosineScheduler,
 )
-from models.preprocessing import TextPreprocessing
-from models.preconditioning import DDPMPrecond
+from t2i_imagenet.training.cad.models.preprocessing import TextPreprocessing
+from t2i_imagenet.training.cad.models.preconditioning import DDPMPrecond
 
 SAMPLERS = {
     "ddim": ddim_sampler,
