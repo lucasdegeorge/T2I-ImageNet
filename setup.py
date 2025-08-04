@@ -10,8 +10,8 @@ setup(
     author="Lucas Degeorge and Arijit Ghosh",
     # packages=find_packages(exclude=["tests*"]),
     install_requires=[
-        "torch==2.4.0",
-        "torchvision==0.19.0",
+        "torch>=2.4.0",
+        "torchvision>=0.19.0",
         "einops",
         "transformers",
         "diffusers",
