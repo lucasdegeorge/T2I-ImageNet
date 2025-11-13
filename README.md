@@ -13,7 +13,7 @@ The core idea is that text-to-image generation models traditionally rely on the 
 
 Paper on Arxiv: https://arxiv.org/pdf/2502.21318
 
-Project website: https://lucasdegeorge.github.io/projects/t2i_imagenet/
+Project website: https://lucasdegeorge.github.io/projects/t2i-imagenet/
 
 
 ## Install 
