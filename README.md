@@ -77,11 +77,11 @@ See [`training/README.md`](https://github.com/lucasdegeorge/T2I-ImageNet/blob/ma
 If you happen to use this repo in your experiments, you can acknowledge us by citing the following paper:
 
 ```bibtex
-@article{degeorge2025farimagenettexttoimagegeneration, 
-     title           ={How far can we go with ImageNet for Text-to-Image generation?}, 
-     author          ={Lucas Degeorge and Arijit Ghosh and Nicolas Dufour and David Picard and Vicky Kalogeiton}, 
-     year            ={2025}, 
-     journal         ={arXiv},
- }
+@article{degeorge2025far,
+  title={How far can we go with ImageNet for Text-to-Image generation?},
+  author={Degeorge, Lucas and Ghosh, Arijit and Dufour, Nicolas and Picard, David and Kalogeiton, Vicky},
+  journal={arXiv preprint arXiv:2502.21318},
+  year={2025}
+}
 ```
 
