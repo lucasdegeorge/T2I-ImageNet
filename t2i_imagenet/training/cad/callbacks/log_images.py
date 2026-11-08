@@ -90,7 +90,7 @@ class LogGeneratedImages(Callback):
     def on_train_start(self, trainer, pl_module):
         try:
             self.world_size = torch.distributed.get_world_size()
-        except:
+        except RuntimeError:
             self.world_size = 1
         generator = torch.Generator(device="cpu").manual_seed(3407)
         if self.log_conditional:
@@ -122,7 +122,7 @@ class LogGeneratedImages(Callback):
     def on_test_start(self, trainer, pl_module):
         try:
             self.world_size = torch.distributed.get_world_size()
-        except:
+        except RuntimeError:
             self.world_size = 1
         generator = torch.Generator(device="cpu").manual_seed(3407)
         if self.log_conditional:
